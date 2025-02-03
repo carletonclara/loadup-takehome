@@ -3,5 +3,5 @@
 [x] create static bookings table
 [x] create model and db table for bookings
 [x] render bookings in table
-[ ] give form submit behavior
+[x] give form submit behavior
 [ ] create cost service

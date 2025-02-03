@@ -15,6 +15,22 @@ import dayjs from 'dayjs';
 const RequestForm = (props) => {
   const [form] = Form.useForm();
 
+  const onFinish = (values) => {
+    const url = "create_booking"
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+    },
+      body: JSON.stringify(values)
+  });
+    console.log(values);
+  };
+  
+  const onFinishFailed = (errorInfo) => {
+    // add error handling later
+  };
+
   return (
     <>
       <Typography.Title level={3}>
@@ -32,14 +48,14 @@ const RequestForm = (props) => {
         style={{
           maxWidth: 600,
         }}
-        // onFinish={onFinish}
-        // onFinishFailed={onFinishFailed}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
         initialValues={null}
         autoComplete="off"
       >
         <Form.Item
           label="First Name"
-          name="firstname"
+          name="first_name"
           rules={[
             {
               required: true,
@@ -52,7 +68,7 @@ const RequestForm = (props) => {
 
         <Form.Item
           label="Last Name"
-          name="lastname"
+          name="last_name"
           rules={[
             {
               required: true,
@@ -65,7 +81,7 @@ const RequestForm = (props) => {
 
         <Form.Item
           label="Animal Name"
-          name="animalname"
+          name="animal_name"
           rules={[
             {
               required: true,
@@ -78,7 +94,7 @@ const RequestForm = (props) => {
 
         <Form.Item 
           label="Animal Type"
-          name="animaltype"
+          name="animal_type"
           rules={[
             {
               required: true,
@@ -95,7 +111,7 @@ const RequestForm = (props) => {
 
         <Form.Item 
           label="Sitting Duration"
-          name="servicehours"
+          name="service_hours"
           rules={[
             {
               required: true,
@@ -113,7 +129,7 @@ const RequestForm = (props) => {
 
         <Form.Item 
           label="Date of Service"
-          name="servicedate"
+          name="service_date"
           rules={[
             {
               required: true,
