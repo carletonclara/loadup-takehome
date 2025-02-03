@@ -9,7 +9,7 @@
 [x] display price to user?
 [ ] error handling on form
 [x] navigation
-[ ] root page
+[x] root page
 [ ] make prettier :)
 [ ] tests!!!
 [ ] code cleanup and self review

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'animal_sitting#index'
   get 'request_form', to: 'animal_sitting#form'
   get 'bookings', to: 'animal_sitting#bookings'
 

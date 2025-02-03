@@ -1,6 +1,6 @@
 class AnimalSittingController < ApplicationController
   
-    def form
+    def index
     end
 
     def bookings
