@@ -18,8 +18,6 @@ class AnimalSittingController < ApplicationController
           service_cost: 0
       )
 
-      binding.pry
-
       if @request.save!
         render json: @request, status: :created
       else
