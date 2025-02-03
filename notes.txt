@@ -34,3 +34,7 @@ Questions I would ask product
     Make all of the prices ref one var if it needs to be changed in the future.
     Also consider adding more animals in the future
     When do we need to show this? To the user or only in the admin view? 
+
+### Issues along the way ###
+
+- csrf errors for requests
