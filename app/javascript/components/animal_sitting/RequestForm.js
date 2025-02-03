@@ -1,25 +1,27 @@
 import React, { useState } from "react"
 import { 
-  Button, 
-  Card,
+  Button,
   DatePicker, 
   Form, 
   Input, 
   InputNumber, 
   Select,
   Typography,
-  Modal
 } from 'antd';
 import dayjs from 'dayjs';
 import PriceCard from "./PriceCard";
+import SubmitModal from "./SubmitModal";
 
 const RequestForm = (props) => {
   const [form] = Form.useForm();
   const [cost, setCost] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formValues, setFormValues] = useState();
 
   const onFinish = (values) => {
     values["service_cost"] = cost;
-    createBooking(values);
+    setFormValues(values);
+    showModal();
   };
   
   const onFinishFailed = (errorInfo) => {
@@ -63,8 +65,24 @@ const RequestForm = (props) => {
     });
   }
 
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    createBooking(formValues);
+    window.location.href = '/'; //would like to setup react router in the future
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
+      <SubmitModal
+        isModalOpen={isModalOpen} 
+        handleOk={handleOk}
+        handleCancel={handleCancel}
+      />
       <Typography.Title level={3}>
           Animal Sitting Request Form
       </Typography.Title>
