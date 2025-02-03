@@ -6,7 +6,7 @@
 [x] give form submit behavior
 [x] create cost service
 [ ] add modal and cleanup onSubmit of form
-[ ] display price to user?
+[x] display price to user?
 [ ] error handling on form
 [ ] navigation
 [ ] tests!!!

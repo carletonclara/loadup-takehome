@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'bookings', to: 'animal_sitting#bookings'
 
   post 'create_booking', to: 'animal_sitting#create'
+  post 'calculate_cost', to: 'animal_sitting#calculate_cost'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

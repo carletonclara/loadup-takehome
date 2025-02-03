@@ -8,8 +8,6 @@ class AnimalSittingController < ApplicationController
     end
 
     def create
-      cost = calculate_cost(params)
-
       @request = AnimalSittingBooking.new(
           first_name: params[:first_name],
           last_name: params[:last_name],
@@ -17,7 +15,7 @@ class AnimalSittingController < ApplicationController
           animal_type: params[:animal_type],
           service_hours: params[:service_hours],
           service_date: params[:service_date],
-          service_cost: cost
+          service_cost: params[:service_cost]
       )
 
       if @request.save!
@@ -27,11 +25,10 @@ class AnimalSittingController < ApplicationController
       end
     end
 
-    private
-
-    def calculate_cost(params)
+    def calculate_cost
         if !params[:service_hours].nil? && !params[:animal_type].nil?
-            return CostService.new(params[:service_hours], params[:animal_type]).calculate_cost
+            cost = CostService.new(params[:service_hours], params[:animal_type]).calculate_cost
+            render json: { service_cost: cost } , status: :ok
         else 
             raise "missing params"
         end

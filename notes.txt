@@ -39,3 +39,6 @@ Questions I would ask product
 
 - csrf errors for requests
 - cors errors :/
+- rendering the price on form change seems like it could be inefficient, limited making the 
+    request for certain fields but could still be inefficient.
+- 

@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { 
   Button, 
+  Card,
   DatePicker, 
   Form, 
   Input, 
@@ -14,8 +15,44 @@ import dayjs from 'dayjs';
 
 const RequestForm = (props) => {
   const [form] = Form.useForm();
+  const [cost, setCost] = useState(0);
 
   const onFinish = (values) => {
+    values["service_cost"] = cost;
+    createBooking(values);
+  };
+  
+  const onFinishFailed = (errorInfo) => {
+    // add error handling later
+  };
+
+  const onValuesChange = (changedValues, allValues) => {
+    if(updateCost(changedValues, allValues)) {
+      calculateCost(allValues).then(function(results){
+        setCost(results["service_cost"]);
+      });
+    }
+  }
+
+  const updateCost = (changedValues, allValues) => {
+    const updatedOption = ("service_hours" in changedValues || "animal_type" in changedValues);
+    const valuesPresent = (allValues["service_hours"] !== undefined && allValues["animal_type"] !== undefined);
+    return updatedOption && valuesPresent;
+  }
+
+  const calculateCost = async (values) => {
+    const url = "calculate_cost"
+    const request = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+    },
+      body: JSON.stringify(values)
+    });
+    return request.json();
+  }
+
+  const createBooking = (values) => {
     const url = "create_booking"
     fetch(url, {
       method: "POST",
@@ -23,13 +60,8 @@ const RequestForm = (props) => {
         "Content-Type": "application/json"
     },
       body: JSON.stringify(values)
-  });
-    console.log(values);
-  };
-  
-  const onFinishFailed = (errorInfo) => {
-    // add error handling later
-  };
+    });
+  }
 
   return (
     <>
@@ -50,6 +82,7 @@ const RequestForm = (props) => {
         }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
+        onValuesChange={onValuesChange}
         initialValues={null}
         autoComplete="off"
       >
@@ -150,6 +183,10 @@ const RequestForm = (props) => {
           </Button>
         </Form.Item>
       </Form>
+      <Card size="small" style={{ width: 300 }}>
+        <p>Total Cost:</p>
+        <p>${cost}</p>
+      </Card>
     </>
   )
 }
