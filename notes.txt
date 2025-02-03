@@ -1,0 +1,36 @@
+### Looking at the requirements ###
+
+1. An interface to collect bookings that allows a user to provide:
+    a. First Name
+    b. Last Name
+    c. Animal Name
+    d. Animal Types (Dog/Cat/Pig)
+        Should this be a drop down? What if we add more? Radio button will not be scalable if we have a bunch of types
+    e. Hours Requested (min 2, max 8)
+        Message to user describing limit?
+        Toggle buttons to add and subtract
+        We need a way to directly input as well, it could be annoying to have to keep clicking
+        Red outline and message for if it it out of bounds
+        Min/Max refs should be easily alterable in the code
+    f. Date of service
+        How far in the future do we want to schedule?
+        Calendar view would be a nice to have
+        Date validation?
+
+Questions I would ask product
+    Do we want validation as the user goes through the page or on submit? 
+    All fields are required?
+    Do we want a warning if we exit the page when in progress? 
+    Will you need to be signed in to access this page?
+    Data deletion time frame?
+
+
+2. A "pricing engine" to determine the cost of service
+    a. Base charge of $20
+    b. $20 additional per hour for pigs
+    c. $10 additional per hour for dogs
+    d. $5 additional per hour for cats
+
+    Make all of the prices ref one var if it needs to be changed in the future.
+    Also consider adding more animals in the future
+    When do we need to show this? To the user or only in the admin view? 
