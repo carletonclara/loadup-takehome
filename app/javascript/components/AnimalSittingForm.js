@@ -7,8 +7,6 @@ import {
   Input, 
   InputNumber, 
   Select,
-  Col, 
-  Row,
   Typography,
   Modal
 } from 'antd';
