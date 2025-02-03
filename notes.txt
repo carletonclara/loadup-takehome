@@ -38,3 +38,4 @@ Questions I would ask product
 ### Issues along the way ###
 
 - csrf errors for requests
+- cors errors :/
