@@ -4,4 +4,10 @@
 [x] create model and db table for bookings
 [x] render bookings in table
 [x] give form submit behavior
-[ ] create cost service
+[x] create cost service
+[ ] add modal and cleanup onSubmit of form
+[ ] display price to user?
+[ ] error handling on form
+[ ] navigation
+[ ] tests!!!
+[ ] code cleanup and self review
