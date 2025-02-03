@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import PropTypes from "prop-types"
 import { 
   Button, 
   Card,
@@ -12,6 +11,7 @@ import {
   Modal
 } from 'antd';
 import dayjs from 'dayjs';
+import PriceCard from "./PriceCard";
 
 const RequestForm = (props) => {
   const [form] = Form.useForm();
@@ -183,16 +183,9 @@ const RequestForm = (props) => {
           </Button>
         </Form.Item>
       </Form>
-      <Card size="small" style={{ width: 300 }}>
-        <p>Total Cost:</p>
-        <p>${cost}</p>
-      </Card>
+      <PriceCard cost={cost}/>
     </>
   )
 }
-
-RequestForm.propTypes = {
-  greeting: PropTypes.string
-};
 
 export default RequestForm
