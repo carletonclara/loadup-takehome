@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table, Typography } from 'antd';
 import dayjs from 'dayjs';
+import PageHeader from './PageHeader';
 
 const columns = [
   {
@@ -48,12 +49,13 @@ const columns = [
 
 const Bookings = (props) => {
   return (
-      <div>
-          <Typography.Title level={3}>
-              Animal Sitting Requests
-          </Typography.Title>
-          <Table columns={columns} dataSource={props.bookings} />
-      </div>
+      <>
+        <PageHeader />
+        <Typography.Title level={3}>
+            Animal Sitting Requests
+        </Typography.Title>
+        <Table columns={columns} dataSource={props.bookings} />
+      </>
   )
 }
 

@@ -8,6 +8,8 @@
 [x] add modal and cleanup onSubmit of form
 [x] display price to user?
 [ ] error handling on form
-[ ] navigation
+[x] navigation
+[ ] root page
+[ ] make prettier :)
 [ ] tests!!!
 [ ] code cleanup and self review

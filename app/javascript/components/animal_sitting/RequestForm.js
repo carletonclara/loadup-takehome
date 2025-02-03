@@ -11,6 +11,7 @@ import {
 import dayjs from 'dayjs';
 import PriceCard from "./PriceCard";
 import SubmitModal from "./SubmitModal";
+import PageHeader from "./PageHeader";
 
 const RequestForm = (props) => {
   const [form] = Form.useForm();
@@ -78,6 +79,7 @@ const RequestForm = (props) => {
 
   return (
     <>
+      <PageHeader />
       <SubmitModal
         isModalOpen={isModalOpen} 
         handleOk={handleOk}

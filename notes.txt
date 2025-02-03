@@ -41,4 +41,10 @@ Questions I would ask product
 - cors errors :/
 - rendering the price on form change seems like it could be inefficient, limited making the 
     request for certain fields but could still be inefficient.
+
+
+### Nice to haves ###
+
+- price breakdown in PriceCard
+- react router
 - 
