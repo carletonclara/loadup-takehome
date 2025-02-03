@@ -12,7 +12,7 @@ import {
 } from 'antd';
 import dayjs from 'dayjs';
 
-const AnimalSittingForm = (props) => {
+const RequestForm = (props) => {
   const [form] = Form.useForm();
 
   return (
@@ -138,8 +138,8 @@ const AnimalSittingForm = (props) => {
   )
 }
 
-AnimalSittingForm.propTypes = {
+RequestForm.propTypes = {
   greeting: PropTypes.string
 };
 
-export default AnimalSittingForm
+export default RequestForm

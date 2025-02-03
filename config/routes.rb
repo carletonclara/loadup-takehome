@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'animal_sitting', to: 'animal_sitting#index'
+  get 'request_form', to: 'animal_sitting#form'
+  get 'bookings', to: 'animal_sitting#bookings'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
