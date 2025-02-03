@@ -4,5 +4,6 @@ class AnimalSittingController < ApplicationController
     end
 
     def bookings
+      @bookings = AnimalSittingBooking.all
     end
   end
