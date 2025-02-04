@@ -10,7 +10,7 @@
 [ ] error handling on form
 [x] navigation
 [x] root page
-[ ] make prettier :)
+[x] make prettier :)
 [x] tests!!!
     [x] controller
     [x] model

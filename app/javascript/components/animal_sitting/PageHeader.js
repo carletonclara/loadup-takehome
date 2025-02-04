@@ -1,6 +1,5 @@
 import React from "react"
-import { Menu, Layout } from 'antd';
-const { Header } = Layout;
+import { Menu } from 'antd';
 
 function getItem(label, key, icon, children) {
     return {
@@ -19,22 +18,11 @@ const items = [
 
 const PageHeader = () => {
   return (
-    <Header
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-        }}
-      >
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          items={items}
-          style={{
-            flex: 1,
-            minWidth: 0,
-          }}
-        />
-      </Header>
+      <Menu
+        theme="light"
+        mode="horizontal"
+        items={items}
+      />
   );
 };
 export default PageHeader;

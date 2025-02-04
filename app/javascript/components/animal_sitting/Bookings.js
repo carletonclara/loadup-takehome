@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Typography } from 'antd';
+import { Col, Row, Table, Typography } from 'antd';
 import dayjs from 'dayjs';
 import PageHeader from './PageHeader';
 
@@ -51,10 +51,14 @@ const Bookings = (props) => {
   return (
       <>
         <PageHeader />
-        <Typography.Title level={3}>
-            Animal Sitting Requests
-        </Typography.Title>
-        <Table columns={columns} dataSource={props.bookings} />
+        <Row justify="center">
+          <Typography.Title level={3}>
+              Animal Sitting Requests
+          </Typography.Title>
+        </Row>
+        <Row justify="center">
+          <Table columns={columns} dataSource={props.bookings} />
+        </Row>
       </>
   )
 }

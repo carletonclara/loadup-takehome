@@ -49,3 +49,5 @@ Questions I would ask product
 - price breakdown in PriceCard
 - react router
 - factories and stubbing setup for specs
+- I would've liked to break up the RequestForm component and implement better state management with Redux
+- Sorting on the admin view table would be nice

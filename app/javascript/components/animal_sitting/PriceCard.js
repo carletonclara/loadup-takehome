@@ -4,7 +4,7 @@ import { Card } from 'antd';
 const PriceCard = ({cost}) => {
     return(
         <>
-        <Card size="small" style={{ width: 300 }}>
+        <Card size="small">
             <p>Total Cost:</p>
             <p>${cost}</p>
         </Card>
