@@ -7,7 +7,7 @@
 [x] create cost service
 [x] add modal and cleanup onSubmit of form
 [x] display price to user?
-[ ] error handling on form
+[x] error handling on form
 [x] navigation
 [x] root page
 [x] make prettier :)

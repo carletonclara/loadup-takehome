@@ -26,10 +26,6 @@ const RequestForm = (props) => {
     setFormValues(values);
     showModal();
   };
-  
-  const onFinishFailed = (errorInfo) => {
-    // add error handling later
-  };
 
   const onValuesChange = (changedValues, allValues) => {
     if(updateCost(changedValues, allValues)) {
@@ -57,24 +53,33 @@ const RequestForm = (props) => {
     return request.json();
   }
 
-  const createBooking = (values) => {
+  const createBooking = async (values) => {
     const url = "create_booking"
-    fetch(url, {
+    const request = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
     },
       body: JSON.stringify(values)
     });
+    return request;
   }
 
   const showModal = () => {
     setIsModalOpen(true);
   };
+  
   const handleOk = () => {
-    createBooking(formValues);
-    window.location.href = '/'; //would like to setup react router in the future
+    createBooking(formValues).then(function(results){
+      if (results.status >= 400) {
+        setIsModalOpen(false);
+        alert("There was a problem submitting your request. Please try again.");
+      } else {
+        window.location.href = '/'; //would like to setup react router in the future
+      }
+    })
   };
+
   const handleCancel = () => {
     setIsModalOpen(false);
   };
@@ -107,7 +112,6 @@ const RequestForm = (props) => {
               maxWidth: 600,
             }}
             onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
             onValuesChange={onValuesChange}
             initialValues={null}
             autoComplete="off"

@@ -78,4 +78,6 @@ feature "Visit request form" do
     fill_in 'Sitting Duration', with: 8
     expect(page).to have_content("$100")
   end
+
+  # need a spec to handle error on failed submission because of error on create
 end
