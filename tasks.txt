@@ -16,5 +16,5 @@
     [x] model
     [x] cost service
     [x] form submission 
-[ ] README
+[x] README
 [ ] code cleanup and self review
