@@ -11,12 +11,10 @@
 [x] navigation
 [x] root page
 [ ] make prettier :)
-[ ] tests!!!
+[x] tests!!!
     [x] controller
     [x] model
     [x] cost service
-    [ ] home
-    [ ] form
-    [ ] admin
+    [x] form submission 
 [ ] README
 [ ] code cleanup and self review

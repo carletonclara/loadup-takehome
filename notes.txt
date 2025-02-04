@@ -41,6 +41,7 @@ Questions I would ask product
 - cors errors :/
 - rendering the price on form change seems like it could be inefficient, limited making the 
     request for certain fields but could still be inefficient.
+- capybara using local database and needs app to be running to run as well. need to find out how to setup
 
 
 ### Nice to haves ###
