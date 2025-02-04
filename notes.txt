@@ -41,13 +41,18 @@ Questions I would ask product
 - cors errors :/
 - rendering the price on form change seems like it could be inefficient, limited making the 
     request for certain fields but could still be inefficient.
-- capybara paths do work I was just silly and used the direct url instead of referencing the path, but now it is not persisting in the db. hmmmm....
+- capybara paths do work I was just silly and used the direct url instead of referencing the path. it's persisting in the db now but I'm not sure what changed.
 
+### Things I think could use more work ###
 
-### Nice to haves ###
-
-- price breakdown in PriceCard
-- react router
+- I could edit the layout and design forever
+- react router -> I would've prefered to not hardcode the nav bar with urls
 - factories and stubbing setup for specs
+- spec robustness in general, I would've liked to have had more specs around different error statuses
 - I would've liked to break up the RequestForm component and implement better state management with Redux
-- Sorting on the admin view table would be nice
+
+### Idea for future improvements ###
+
+- price breakdown in PriceCard (would be cool to break it up and show the hourly rate, the base price, total, etc)
+- roles for different views
+- Sorting on the admin view table would be nice (created_at, service date, price, etc..)

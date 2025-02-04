@@ -52,6 +52,42 @@ feature "Visit request form" do
     expect(page).to have_content("$50")
   end
 
+  context 'Cancel form submission, stay on page' do
+    scenario "Dynamic price, see price update with form changes", :js => true do
+      request_form.visit_form
+      expect(page).to have_content("Animal Sitting Request Form")
+      fill_in 'Date of Service', with: Date.tomorrow
+      fill_in 'First Name', with: 'Joe'
+      fill_in 'Last Name', with: 'Bob'
+      fill_in 'Animal Name', with: 'Archie'
+      within('div.ant-select-selector') do
+          find('span.ant-select-selection-wrap').click
+      end
+      within('div.ant-select-dropdown') do
+          find('div#animal_type_dog', text: "Dog").click
+      end
+      fill_in 'Sitting Duration', with: 3
+      expect(page).to have_content("$50")
+      click_button 'Submit'
+      expect(page).to have_content("Confirm your request")
+      click_button 'Cancel'
+
+      #stays on form page
+      expect(page).not_to have_content("LoadUp Animal Sitting")
+      expect(page).to have_content("Animal Sitting Request Form")
+
+      #confirm entry is not saved in admin view
+      request_form.visit_admin
+      expect(page).to have_content("Animal Sitting Requests")
+      expect(page).not_to have_content("Joe")
+      expect(page).not_to have_content("Bob")
+      expect(page).not_to have_content("Archie")
+      expect(page).not_to have_content("dog")
+      expect(page).not_to have_content("3")
+      expect(page).not_to have_content("$50")
+    end
+  end
+
   scenario "Submit without content, see form validation errors", :js => true do
     request_form.visit_form
     expect(page).to have_content("Animal Sitting Request Form")

@@ -17,4 +17,4 @@
     [x] cost service
     [x] form submission 
 [x] README
-[ ] code cleanup and self review
+[x] code cleanup and self review
