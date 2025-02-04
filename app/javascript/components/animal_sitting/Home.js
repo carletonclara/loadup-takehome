@@ -1,9 +1,9 @@
-import React from "react"
+import React from "react";
 import { Image, Typography, Row } from 'antd';
 import PageHeader from "./PageHeader";
-import snowball from "../../../assets/images/snowball.png"
+import snowball from "../../../assets/images/snowball.png";
 
-const Home = ({cost}) => {
+const Home = () => {
     return(
         <>
             <PageHeader />

@@ -3,8 +3,8 @@ require 'date'
 
 RSpec.describe "AnimalSittingControllers", type: :request do
   let(:create_valid_params) do
-    { 
-      first_name: 'clara', 
+    {
+      first_name: 'clara',
       last_name: 'carleton',
       animal_name: 'snowball',
       animal_type: 'cat',
@@ -14,14 +14,14 @@ RSpec.describe "AnimalSittingControllers", type: :request do
     }
   end
   let(:cost_valid_params) do
-    { 
+    {
       animal_type: 'cat',
       service_hours: 3,
     }
   end
 
   let(:invalid_params) do
-    { 
+    {
       wrong: 'param'
     }
   end

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 import { 
   Button,
   Col,
@@ -88,7 +88,7 @@ const RequestForm = (props) => {
     <>
       <PageHeader />
       <SubmitModal
-        isModalOpen={isModalOpen} 
+        isModalOpen={isModalOpen}
         handleOk={handleOk}
         handleCancel={handleCancel}
       />
@@ -155,7 +155,7 @@ const RequestForm = (props) => {
               <Input />
             </Form.Item>
 
-            <Form.Item 
+            <Form.Item
               label="Animal Type"
               name="animal_type"
               rules={[
@@ -172,7 +172,7 @@ const RequestForm = (props) => {
               </Select>
             </Form.Item>
 
-            <Form.Item 
+            <Form.Item
               label="Sitting Duration"
               name="service_hours"
               rules={[
@@ -182,15 +182,15 @@ const RequestForm = (props) => {
                 },
               ]}
             >
-                <InputNumber 
-                  suffix="hours" 
-                  min={2} 
+                <InputNumber
+                  suffix="hours"
+                  min={2}
                   max={8} 
-                  style={{ width: '100%' }} 
+                  style={{ width: '100%' }}
                 />
             </Form.Item>
 
-            <Form.Item 
+            <Form.Item
               label="Date of Service"
               name="service_date"
               rules={[
@@ -200,7 +200,7 @@ const RequestForm = (props) => {
                 },
               ]}
             >
-              <DatePicker 
+              <DatePicker
                 minDate={dayjs().add(1, "day")}
                 maxDate={dayjs().add(30, "day")}
                 style={{ width: '100%' }}

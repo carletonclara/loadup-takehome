@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe AnimalSittingBooking, type: :model do
   let (:valid_booking) do
     AnimalSittingBooking.create(
-        first_name: 'clara', 
+        first_name: 'clara',
         last_name: 'carleton',
         animal_name: 'snowball',
         animal_type: 'cat',

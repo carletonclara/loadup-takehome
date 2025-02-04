@@ -24,7 +24,7 @@ feature "Visit request form" do
     #fill out request form and submit
     request_form.visit_form
     expect(page).to have_content("Animal Sitting Request Form")
-    fill_in 'Date of Service', with: Date.today+1.day
+    fill_in 'Date of Service', with: Date.tomorrow
     fill_in 'First Name', with: 'Joe'
     fill_in 'Last Name', with: 'Bob'
     fill_in 'Animal Name', with: 'Archie'
