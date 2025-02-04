@@ -2,7 +2,7 @@
 
 ## Summary
 
-This app was created using the reac-rails gem to incorporate React and the antd gem for styling. I recorded my thoughts throughout development in notes.txt and tracked my progress in tasks.txt.
+This app was created using the react-rails gem to incorporate React and the antd gem for styling. I recorded my thoughts throughout development in notes.txt and tracked my progress in tasks.txt.
 
 ---
 
