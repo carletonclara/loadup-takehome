@@ -30,7 +30,7 @@ class AnimalSittingController < ApplicationController
             cost = CostService.new(params[:service_hours], params[:animal_type]).calculate_cost
             render json: { service_cost: cost } , status: :ok
         else 
-            raise "missing params"
+          render json: {}, status: :bad_request
         end
     end
   end

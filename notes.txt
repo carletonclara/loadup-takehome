@@ -47,4 +47,4 @@ Questions I would ask product
 
 - price breakdown in PriceCard
 - react router
-- 
+- factories and stubbing setup for specs
