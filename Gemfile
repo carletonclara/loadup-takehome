@@ -63,6 +63,6 @@ group :test do
   gem "rspec-rails"
 end
 
-gem "shakapacker", "= 8.1"
+gem "shakapacker", "8.3.0"
 
 gem "react-rails", "= 3.2"
